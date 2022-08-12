@@ -1,0 +1,5 @@
+package com.bikkadit.RestFulUsingHibernate.HibernateConfig;
+
+public class HibernateConfig {
+
+}
