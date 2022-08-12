@@ -5,12 +5,17 @@ import java.util.List;
 import com.bikkadit.RestFulUsingHibernate.Model.Employee;
 
 public class EmpServiceImpl implements EmpServiceI {
-	
 
 	@Override
 	public int addEmplyee(Employee em) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public Employee getByIdEm(Employee employee) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
@@ -20,7 +25,7 @@ public class EmpServiceImpl implements EmpServiceI {
 	}
 
 	@Override
-	public Employee loginCheck(Employee employee) {
+	public Employee loginCheck(int id, String name) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -42,5 +47,7 @@ public class EmpServiceImpl implements EmpServiceI {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+
 	
 }

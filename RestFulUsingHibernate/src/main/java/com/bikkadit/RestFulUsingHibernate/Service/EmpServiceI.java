@@ -9,9 +9,11 @@ public interface EmpServiceI {
 	
 	public int addEmplyee(Employee em);
 	
+	public Employee getByIdEm(Employee employee);
+	
 	public List<Employee> getAllempdata();
 	
-	public Employee loginCheck(Employee employee);
+	public Employee loginCheck(int id, String name);
 	
 	public Employee editUser(int empId);
 	

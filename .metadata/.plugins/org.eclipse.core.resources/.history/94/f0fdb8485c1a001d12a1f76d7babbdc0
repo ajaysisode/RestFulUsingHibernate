@@ -1,0 +1,22 @@
+package com.bikkadit.RestFulUsingHibernate.Controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.bikkadit.RestFulUsingHibernate.Model.Employee;
+import com.bikkadit.RestFulUsingHibernate.Service.EmpServiceI;
+
+
+public class EmployeeController {
+	@Autowired
+	private EmpServiceI empServiceI;
+	
+	public ResponseEntity<String> addEmployee(@RequestBody Employee employee){
+		int addEmplyee = empServiceI.addEmplyee(employee);
+		return new ResponseEntity<>("id created"+employee.getEmpId(),HttpStatus.OK);
+		
+	}
+}

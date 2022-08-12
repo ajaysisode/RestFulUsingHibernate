@@ -1,0 +1,23 @@
+package com.bikkadit.RestFulUsingHibernate.Service;
+
+import java.util.List;
+
+import com.bikkadit.RestFulUsingHibernate.Model.Employee;
+
+public interface EmpServiceI {
+	
+	
+	public int addEmplyee(Employee em);
+	
+	public Employee getByIdEm(Employee employee)
+	
+	public List<Employee> getAllempdata();
+	
+	public Employee loginCheck(int id, String name);
+	
+	public Employee editUser(int empId);
+	
+	public Employee update(Employee user);
+	
+	public Employee delete(int uid);
+}
