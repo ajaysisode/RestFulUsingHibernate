@@ -1,0 +1,5 @@
+package com.bikkadit.RestFulUsingHibernate.Dao;
+
+public interface EmpDaoI {
+
+}

@@ -1,0 +1,45 @@
+package com.bikkadit.RestFulUsingHibernate.Dao;
+
+import java.util.List;
+
+import com.bikkadit.RestFulUsingHibernate.Model.Employee;
+
+public class EmpDaoImpl implements EmpDaoI {
+
+	@Override
+	public int addEmplyee(Employee em) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Employee getByIdEm(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Employee> getAllempdata(List<Employee> employees) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Employee> loginCheck(int id, String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employee update(Employee user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employee delete(int uid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
