@@ -1,15 +1,15 @@
 package com.bikkadit.RestFulUsingHibernate.Dao;
 
-import java.io.Serializable;
-import java.util.List;
 
+import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.bikkadit.RestFulUsingHibernate.Model.Employee;
-
+@Repository
 public class EmpDaoImpl implements EmpDaoI {
 	@Autowired
 	public SessionFactory sf;
@@ -19,7 +19,7 @@ public class EmpDaoImpl implements EmpDaoI {
 		Session session = sf.openSession();
 		session.beginTransaction();
 			int id = (int) session.save(em);
-		
+		session.getTransaction().commit();
 		return id;
 	}
 
@@ -31,7 +31,7 @@ public class EmpDaoImpl implements EmpDaoI {
 	}
 
 	@Override
-	public List<Employee> getAllempdata(List<Employee> employees) {
+	public List<Employee> getAllempdata() {
 		Session session = sf.openSession();
 		String hql="from Employee";
 		Query query = session.createQuery(hql);
@@ -79,7 +79,7 @@ public class EmpDaoImpl implements EmpDaoI {
 			session.getTransaction().commit();
 			session.close();
 		}
-		return id;
+		return null;
 	}
 
 }

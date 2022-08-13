@@ -1,48 +1,47 @@
 package com.bikkadit.RestFulUsingHibernate.Service;
 
 import java.util.List;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.bikkadit.RestFulUsingHibernate.Dao.EmpDaoI;
 import com.bikkadit.RestFulUsingHibernate.Model.Employee;
-
+@Service
 public class EmpServiceImpl implements EmpServiceI {
-
+	@Autowired
+	public EmpDaoI empDaoI;
 	@Override
 	public int addEmplyee(Employee em) {
-		// TODO Auto-generated method stub
-		return 0;
+		int i = empDaoI.addEmplyee(em);
+		return i;
 	}
 
 	@Override
 	public Employee getByIdEm(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Employee byIdEm = empDaoI.getByIdEm(id);
+		return byIdEm;
 	}
 
 	@Override
-	public List<Employee> getAllempdata(List<Employee> employees) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Employee> getAllempdata() {
+		List<Employee> allempdata = empDaoI.getAllempdata();
+		return allempdata;
 	}
 
 	@Override
 	public Employee loginCheck(int id, String name) {
-		// TODO Auto-generated method stub
-		return null;
+		Employee loginCheck = empDaoI.loginCheck(id, name);
+		return loginCheck;
 	}
 
 	@Override
 	public Employee update(Employee user) {
-		// TODO Auto-generated method stub
-		return null;
+		Employee update = empDaoI.update(user);
+		return update;
 	}
 
 	@Override
 	public Employee delete(int uid) {
-		// TODO Auto-generated method stub
-		return null;
+		Employee delete = empDaoI.delete(uid);
+		return delete;
 	}
-
-
-
-	
 }

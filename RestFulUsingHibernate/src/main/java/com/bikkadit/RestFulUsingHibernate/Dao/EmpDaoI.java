@@ -10,7 +10,7 @@ public interface EmpDaoI {
 
 	public Employee getByIdEm(int id);
 
-	public List<Employee> getAllempdata(List<Employee> employees);
+	public List<Employee> getAllempdata();
 
 	public Employee loginCheck(int id, String name);
 

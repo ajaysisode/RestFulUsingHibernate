@@ -10,18 +10,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 import com.bikkadit.RestFulUsingHibernate.Model.Employee;
 import com.bikkadit.RestFulUsingHibernate.Service.EmpServiceI;
-
+@RestController
 public class EmployeeController {
 	@Autowired
-	private EmpServiceI empServiceI;
+	public EmpServiceI empServiceI;
 
 	@PostMapping(value = "/addemployee", consumes = "application/json", produces = "application/json")
 	public ResponseEntity<String> addEmployee(@RequestBody Employee employee) {
 		int addEmplyee = empServiceI.addEmplyee(employee);
 		System.out.println(addEmplyee);
-		return new ResponseEntity<>("id created" + employee.getEmpId(), HttpStatus.CREATED);
+		return new ResponseEntity<>("id created::" + addEmplyee, HttpStatus.CREATED);
 	}
 
 	@GetMapping(value = "/getById/{id}", produces = "application/json")
@@ -31,8 +32,8 @@ public class EmployeeController {
 	}
 
 	@GetMapping(value = "/getAllEM", produces = "application/json")
-	public ResponseEntity<List<Employee>> getAllEM(List<Employee> employees) {
-		List<Employee> allempdata = empServiceI.getAllempdata(employees);
+	public ResponseEntity<List<Employee>> getAllEM() {
+		List<Employee> allempdata = empServiceI.getAllempdata();
 		return new ResponseEntity<List<Employee>>(allempdata, HttpStatus.OK);
 	}
 
